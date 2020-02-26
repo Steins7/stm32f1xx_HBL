@@ -1,0 +1,3 @@
+#!/bin/bash
+openocd  -f interface/stlink-v2.cfg -f target/cs32f1x.cfg
+
