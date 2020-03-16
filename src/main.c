@@ -1,5 +1,6 @@
 // standard headers
 #include <stdint.h>
+#include <stdlib.h>
 
 // driver includes
 #include "drivers/rcc.h"
@@ -7,6 +8,8 @@
 
 Clock_t sysclks;
 #include "drivers/timer.h"
+
+extern uint32_t end;
 
 //------------------------------------------------------------------------------
 /* static variables */;
@@ -34,6 +37,13 @@ int main(void) {
 	// start timed interruption
 	timer_tick_init(TIM2, 1000, timeout_cb);
 	timer_start(TIM2);
+
+	uint32_t test = (uint32_t)(&end);
+	test++;
+	int* tab = (int*)malloc(10*sizeof(int));
+	for(int i=0; i<10; ++i) {
+		tab[i] = i;
+	}
 
 	// main loop
 	for(;;);

@@ -3,7 +3,7 @@
 
 # --- control global project settings
 # RELEASE=1 -> enable optimisation, then disable debug
-# RELEASE=0 -> disbale optimisation, then enable debug
+# RELEASE=0 -> disable optimisation, then enable debug
 RELEASE=0
 
 # --- project architecture
@@ -104,7 +104,7 @@ ${BIN}/%.elf : ${MAIN_OBJECT_FILES} ${COMMON_OBJECT_FILES}
 	@echo ${COMMON_OBJECT_FILES}
 	@echo
 	${DIR_GUARD}
-	${CC} ${CFLAGS} --verbose -o $@ ${filter-out %ld, $^} ${LIBRARIES} ${LDFLAGS}
+	${CC} ${CFLAGS} -o $@ ${filter-out %ld, $^} ${LIBRARIES} ${LDFLAGS}
 	${OBJDUMP} -h $@
 	${SIZE} $@
 	@${SKIP_LINE}
