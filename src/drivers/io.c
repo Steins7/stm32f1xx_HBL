@@ -1,12 +1,3 @@
-//target header
-#include "../target/stm32f103xb.h"
-
-//custom header
-#include "../config.h"
-
-//std headers
-#include <stdlib.h>
-
 //driver header
 #include "io.h"
 

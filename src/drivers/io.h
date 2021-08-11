@@ -1,5 +1,15 @@
-#ifndef _IO_H_
-#define _IO_H_
+#ifndef IO_H
+#define IO_H
+
+//std headers
+#include <stdlib.h>
+#include <stdint.h>
+
+//target header
+#include "../target/stm32f103xb.h"
+
+//custom header
+#include "../config.h"
 
 //------------------------------------------------------------------------------
 /* GPIO pin mask definitions */
